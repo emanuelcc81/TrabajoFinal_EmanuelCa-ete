@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+
+{%  load static %}
+
+
+{% block contenido %}
+
+<h1>Registro usuario</h1>  
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_table }}
+        <button type="submit">Aceptar</button>
+    </form>
+
+    <button>
+        <a href="{% url 'inicio' %}">Volver</a>
+    </button>
+
+{% endblock %}

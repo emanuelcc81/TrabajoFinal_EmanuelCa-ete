@@ -1,0 +1,39 @@
+{% extends "padre.html" %}
+
+{%  load static %}
+
+
+{% block contenido %}
+
+<head>
+    <title>Document</title>
+    <style>
+        .contend{
+            height: 50vh;
+            margin: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        p{
+            width: 50%;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="contend">
+        <h1>ABOUT ME</h1> 
+        <p>Hola, soy Emanuel Cañete, este es mi primer curso orientado a la programación. La verdad fue un desafío interesante, que me saco de mi sitio de confort, me tuve que poner a investigar, manejar la frustración y motivarme a seguir aprendiendo para poder avanzar. A pesar de mis 41 años quiero seguir capacitandome y aprendiendo para poder insertarme laboralmente en esta industria. Agradezco a mi profesor Maxi y los tutores que supieron encerder la curiosidad y el compromiso de seguir aprendiendo.</p>
+    
+    </div>
+
+    <button>
+        <a href="{% url 'inicio' %}">Volver</a>
+    </button>
+</body>
+
+
+{% endblock %}

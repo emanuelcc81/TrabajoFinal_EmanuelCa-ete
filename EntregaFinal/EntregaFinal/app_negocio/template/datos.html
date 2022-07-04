@@ -1,0 +1,39 @@
+{% extends "padre.html" %}
+
+{%  load static %}
+
+
+{% block contenido %}
+    
+<h1 style="color:white" text-align="center">Datos de Productos</h1> 
+    <table class="table">
+     
+        <thead>
+          <tr>
+            <th scope="col" style="color: white">id</th>
+            <th scope="col" style="color: white">Nombre</th>
+            <th scope="col" style="color: white">Marca</th> 
+            <th scope="col" style="color: white">Fecha fabricacion</th>          
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in datos %}
+            <tr>
+                <th scope="row" style="color: white">{{n.id}}</th>
+                <td style="color: white">{{n.nombre}}</td>
+                <td style="color: white">{{n.marca}}</td>
+                <td style="color: white">{{n.fecha_fab}}</td>
+                <td><a href="{% url 'elimina_datos' n.id %}">Eliminar</a></td> 
+                <td><a href="{% url 'modificar_dato' n.id %}">Modificar</a></td> 
+            </tr>
+            {% endfor %}        
+        
+        </tbody>
+      </table>
+      <button>
+        <a href="alta_datos">Agregar datos</a>
+      </button>
+      <button>
+        <a href="{% url 'inicio' %}">Volver</a>
+      </button>
+{% endblock %}

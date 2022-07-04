@@ -1,0 +1,37 @@
+{% extends "padre.html" %}
+
+{%  load static %}
+
+
+{% block contenido %}
+    
+<h1 style="color:white" text-align="center">Lista de Productos</h1> 
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="color: white">id</th>
+            <th scope="col" style="color: white">Nombre</th>
+            <th scope="col" style="color: white">Precio</th>           
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in producto %}
+            <tr>
+                <th scope="row" style="color: white">{{n.id}}</th>
+                <td style="color: white">{{n.nombre}}</td>
+                <td style="color: white">{{n.precio}}</td>
+                <td><a href="{% url 'elimina_producto' n.id %}">Eliminar</a></td>
+                <td><a href="{% url 'modificar_producto' n.id %}">Modificar</a></td>  
+            </tr>
+            {% endfor %}        
+        
+        </tbody>
+      </table>
+      <button>
+        <a href="alta_productos">Agregar producto</a>
+      </button>
+    <button>
+      <a href="{% url 'inicio' %}">Volver</a>
+    </button>
+
+{% endblock %}

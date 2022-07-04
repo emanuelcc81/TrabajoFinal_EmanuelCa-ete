@@ -1,0 +1,30 @@
+{% extends  "padre.html" %}
+
+
+{% load static %}
+
+
+
+{% block contenido %}
+<h1 style="color:white" text-align="center">Agregar dato de producto</h1>
+    <form action="alta_datos" method="POST">
+        {% csrf_token %}
+        <p>Nombre:</p>
+        <input type="text" name="nombre" required>
+        <p>Marca:</p>
+        <input type="text" name="marca" required>
+        <p>Fecha fabricacion:</p>
+        <input type="date" name="fecha_fab" required>
+
+
+        <input type="submit" value="Enviar">
+
+        <button>
+            <a href="{% url 'datos' %}">Volver</a>
+        </button>
+
+
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends  "padre.html" %}
+
+
+{% load static %}
+
+
+
+{% block contenido %}
+<h1 style="color:white" text-align="center">Agregar proveedores</h1>
+    <form action="alta_proveedores" method="POST">
+        {% csrf_token %}
+        <p>Nombre proveedor:</p>
+        <input type="text" name="nombre" required>
+        <p>Telefono:</p>
+        <input type="number" name="telefono" required>
+       
+
+        <input type="submit" value="Enviar">
+
+        <button>
+            <a href="{% url 'proveedores' %}">Volver</a>
+        </button>
+
+
+    </form>
+
+
+{% endblock %}

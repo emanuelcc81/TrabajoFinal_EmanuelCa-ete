@@ -1,0 +1,23 @@
+{% extends  "padre.html" %}
+
+
+{% load static %}
+
+
+
+{% block contenido %}
+
+    <h1 style="color:white">Resultado de busqueda</h1> 
+    
+    {% if productos %}
+    <ul>
+    {% for producto in productos %}
+        <li style="color: white">Nombre: {{producto.nombre}}</li>
+        <li style="color: white">Precio: {{producto.precio}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>No se encontro el producto</p>
+    {% endif %}
+
+{% endblock %}      

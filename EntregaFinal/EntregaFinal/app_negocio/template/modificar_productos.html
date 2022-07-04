@@ -1,0 +1,28 @@
+{% extends  "padre.html" %}
+
+
+{% load static %}
+
+
+
+{% block contenido %}
+<h1 style="color:white" text-align="center">Modificar producto</h1>
+    <form action="{% url 'modificar_producto' producto.id %}" method="POST">
+        {% csrf_token %}
+        <p>Nombre producto:</p>
+        {{mi_formulario.nombre}}
+        <p>Precio:</p>
+        {{mi_formulario.precio}}
+       
+
+        <input type="submit" value="Enviar">
+
+    <button>
+        <a href="{% url 'productos' %}">Volver</a>
+    </button>
+
+
+    </form>
+
+
+{% endblock %}
